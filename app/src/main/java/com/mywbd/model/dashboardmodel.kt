@@ -9,7 +9,7 @@ data class dashboardstat(
 )
 data class QuickAction(
     val title: String,
-    val icon: ImageVector
+    val icon: ImageVector,
 
 )
 

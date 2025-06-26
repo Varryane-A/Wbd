@@ -20,43 +20,44 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.mywbd.navigation.ROUTE_ABOUT
 import com.mywbd.navigation.ROUTE_DONOR
 import com.mywbd.navigation.ROUTE_RECIPIENT
 import com.mywbd.ui.theme.screens.splashscreen.splash_screen
 
 @Composable
 fun home_screen(navController: NavHostController) {
-    Column(verticalArrangement = Arrangement.SpaceEvenly,
+    Column(verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Black)) {
+            .background(color = Color.White)) {
         Text(text = "Participant Screen",
             fontSize = 35.sp,
             fontFamily = FontFamily.Cursive,
-            color = Color.White
+            color = Color.DarkGray
         )
         Spacer(modifier = Modifier.height(50.dp))
-        Button(onClick = { navController.navigate(ROUTE_DONOR)},
+        Button(onClick = { navController.navigate(ROUTE_ABOUT)},
             modifier = Modifier.width(300.dp),
-            colors = ButtonDefaults.buttonColors(Color.White)) {
+            colors = ButtonDefaults.buttonColors(Color.LightGray)) {
             Text(text = "Donor",
                 fontSize = 35.sp,
                 fontFamily = FontFamily.Serif,
                 color = Color.Blue)
 
         }
-
-        Spacer(modifier = Modifier.height(50.dp))
-        Button(onClick = { navController.navigate(ROUTE_RECIPIENT)},
-            modifier = Modifier.width(300.dp),
-            colors = ButtonDefaults.buttonColors(Color.White)) {
-            Text(text = "Recipient",
-                fontSize = 35.sp,
-                fontFamily = FontFamily.Serif,
-                color = Color.Red)
-
-        }
+//
+//        Spacer(modifier = Modifier.height(50.dp))
+//        Button(onClick = { navController.navigate(ROUTE_RECIPIENT)},
+//            modifier = Modifier.width(300.dp),
+//            colors = ButtonDefaults.buttonColors(Color.LightGray)) {
+//            Text(text = "Recipient",
+//                fontSize = 35.sp,
+//                fontFamily = FontFamily.Serif,
+//                color = Color.Red)
+//
+//        }
     }
 }
 @Preview

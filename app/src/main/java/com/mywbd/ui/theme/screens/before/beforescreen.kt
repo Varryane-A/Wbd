@@ -1,66 +1,60 @@
-package com.mywbd.ui.theme.screens.splashscreen
+package com.mywbd.ui.theme.screens.before
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.mywbd.R
-import androidx.compose.foundation.Image
-import androidx.compose.ui.res.painterResource
-import androidx.compose.foundation.layout.size
-import com.mywbd.navigation.ROUTE_HOME
+import com.mywbd.ui.theme.screens.homescreen.home_screen
 
 @Composable
-fun splash_screen(navController: NavHostController) {
+fun before_screen(navController: NavHostController) {
     Column(verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)) {
-        Text(text = "Welcome to My WBD",
+        Text(
+            text = "Before",
             fontSize = 35.sp,
             fontFamily = FontFamily.Cursive,
             color = Color.Red
         )
 
         Image(
-            painter = painterResource(R.drawable.blood2),
+            painter = painterResource(R.drawable.before),
             contentDescription = "home",
             modifier = Modifier.size(350.dp)
         )
 
-    Spacer(modifier = Modifier.height(50.dp))
-    Button(onClick = { navController.navigate(ROUTE_HOME)},
-        modifier = Modifier.width(300.dp),
-        colors = ButtonDefaults.buttonColors(Color.White)) {
-        Text(text = "Continue",
-            fontSize = 30.sp,
-            fontFamily = FontFamily.Cursive,
-            color = Color.Black)
-
-    }}
-
+//        Spacer(modifier = Modifier.height(5.dp))
+//
+//        Image(
+//            painter = painterResource(R.drawable.comf),
+//            contentDescription = "home",
+//            modifier = Modifier.size(350.dp)
+//        )
+    }
 }
 @Preview
 @Composable
-private fun splash_preview() {
-    splash_screen(rememberNavController())
+private fun before_preview() {
+    before_screen(rememberNavController())
 
 }
